@@ -1,0 +1,8 @@
+{
+  "botname": "Gary",
+  "owner": "Blaney",
+  "slack_api_key": "",
+  "plugins": {
+      "help": true
+    }
+}
