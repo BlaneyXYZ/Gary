@@ -22,7 +22,7 @@ version = "0.1"
 
 class Bot(object):
     def __init__(self):
-        self._client = SlackClient(config.CONFIG_FILE["api"])
+        self._client = SlackClient(config.CONFIG_FILE["slack_api_key"])
         self._plugins = PluginsManager()
         self._dispatcher = MessageDispatcher(self._client, self._plugins, config.ERRORS_TO)
 
