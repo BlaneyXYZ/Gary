@@ -4,7 +4,9 @@ import imp
 import importlib
 import json
 import logging
+import os
 import re
+import sys
 import time
 from glob import glob
 from six.moves import _thread
@@ -13,13 +15,12 @@ from gary.manager import PluginsManager
 from gary.slackclient import SlackClient
 from gary.dispatcher import MessageDispatcher
 
-CONFIG_FILE = json.loads(open("./config.json").read())
 logger = logging.getLogger(__name__)
-
-name = CONFIG_FILE["botname"]
-owner = CONFIG_FILE["owner"]
 version = "0.1"
 
+CONFIG_FILE = json.loads(open("./config.json").read())
+name = CONFIG_FILE["botname"]
+owner = CONFIG_FILE["owner"]
 class Bot(object):
     def __init__(self):
         self._client = SlackClient(config.CONFIG_FILE["slack_api_key"])
@@ -27,6 +28,7 @@ class Bot(object):
         self._dispatcher = MessageDispatcher(self._client, self._plugins, config.ERRORS_TO)
 
     def run(self):
+
         self._plugins.init_plugins()
         self._dispatcher.start()
         self._client.rtm_connect()
