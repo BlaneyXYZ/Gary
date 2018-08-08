@@ -1,7 +1,17 @@
 # -*- coding: utf-8 -*-
-
+import logging
 import os
 import json
+import sys
+import time
+
+if not os.path.exists("config.json"):
+    # if there is no config, show an error and die
+    logging.critical("No config file found, bot shutting down!")
+    print("No config file found! Bot shutting down in five seconds.")
+    print("Copy 'config-default.json' to 'config.json' for defaults.")
+    time.sleep(5)
+    sys.exit()
 DEBUG = False
 
 PLUGINS = [
