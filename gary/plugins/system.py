@@ -13,12 +13,12 @@ except ImportError:
 
 @respond_to('about$', re.IGNORECASE)
 def about(message):
-    """returns basic information about the bot"""
+    """about - returns basic information about the bot"""
     message.reply("{}, version {} run by {} - https://github.com/Mu5tank05/Gary".format(bot.name, bot.version, bot.owner))
 
 @respond_to('system$', re.IGNORECASE)
 def system(message):
-    """-- Retrieves information about the host system."""
+    """system - retrieves information about the host system."""
 
     # Get general system info
     sys_os = platform.platform()

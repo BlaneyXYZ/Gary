@@ -1,12 +1,9 @@
 from gary.bot import respond_to
 from gary.util import http
-import requests
-import json
-import html
 
 @respond_to('porny$')
 def porny_random(message):
-    "returns a random Porny comment"
+    """prony - returns a random porny comment"""
 
     request = http.get_json("http://alfred.blny.me:5000/api/random")
     id = request["id"]
@@ -15,7 +12,7 @@ def porny_random(message):
 
 @respond_to('porny (.*)')
 def porny_comment(message, text):
-    "(id) returns a specfic Porny comment"
+    """porny (id) - returns a specific porny comment"""
     if text.isdigit():
         request = http.get_json("http://alfred.blny.me:5000/api/comment/{}".format(text.replace(" ", "+")))
         id = request["id"]

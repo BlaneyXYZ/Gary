@@ -298,7 +298,7 @@ class Message(object):
         return thread_ts
 
     def docs_reply(self):
-        reply = [u'• `{0}` {1}'.format(v.__name__, v.__doc__ or '')
+        reply = [u'• `{0}`'.format( v.__doc__ or '')
                  for _, v in
                  six.iteritems(self._plugins.commands['respond_to'])]
         return u'\n'.join(reply)

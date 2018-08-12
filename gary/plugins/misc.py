@@ -7,7 +7,7 @@ from gary.bot import listen_to
 
 @respond_to('palindrome (.*)')
 def palindrome(message, text):
-    """(text) - checks if text is a palindrome"""
+    """palindrome (text) - checks if text is a palindrome"""
     string = text.lower()
     if string == string[::-1]:
         message.reply("{} is a palindrome".format(string))
@@ -17,7 +17,7 @@ def palindrome(message, text):
 
 @respond_to('piglatin (.*)')
 def piglatin(message, text):
-    """(text) - returns word in pig latin format"""
+    """piglatin (text) - returns word in pig latin format"""
     word = text.lower()
     vowels = 'aeiou'
     pig = 'ay'
@@ -53,5 +53,5 @@ def cloud(message):
 
 @respond_to('fuck', re.IGNORECASE)
 def fuck(message):
-    """Responds to user's how rude!"""
+    """fuck - responds to user's how rude!"""
     message.reply('Fuck you!')
