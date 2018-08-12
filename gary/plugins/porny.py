@@ -3,7 +3,7 @@ from gary.util import http
 
 @respond_to('porny$')
 def porny_random(message):
-    """prony - returns a random porny comment"""
+    """porny - returns a random porny comment"""
 
     request = http.get_json("http://alfred.blny.me:5000/api/random")
     id = request["id"]
