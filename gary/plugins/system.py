@@ -14,7 +14,7 @@ except ImportError:
 @respond_to('about$', re.IGNORECASE)
 def about(message):
     """about - returns basic information about the bot"""
-    message.reply("{}, version {} run by {} - https://github.com/Mu5tank05/Gary".format(bot.name, bot.version, bot.owner))
+    message.reply("{}, version {} run by {} - https://github.com/BlaneyXYZ/Gary".format(bot.name, bot.version, bot.owner))
 
 @respond_to('system$', re.IGNORECASE)
 def system(message):
